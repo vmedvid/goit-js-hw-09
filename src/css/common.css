@@ -26,8 +26,8 @@ img {
 }
 
 .timer {
-  margin-top: 40px;
-  padding: 100px 25px;
+  margin-top: 20px;
+  padding: 90px 25px;
   display: flex;
   justify-content: center;
   gap: 25px;
@@ -56,8 +56,8 @@ img {
 
 .timer-end-text {
   margin: 0px;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 110px;
+  padding-bottom: 110px;
   text-align: center;
   color: #0000ff;
   font-size: 110px;

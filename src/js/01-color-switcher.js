@@ -29,3 +29,12 @@ stopBtnEl.addEventListener('click', () => {
 
   console.log(`Фон змінився ${count} раз(-и,-ів)`);
 });
+
+startBtnEl.setAttribute(
+  'style',
+  'margin: 50px; padding: 20px; width: 150px; font-size: 22px; border-radius: 5px;'
+);
+stopBtnEl.setAttribute(
+  'style',
+  'margin: 50px; padding: 20px; width: 150px; font-size: 22px; border-radius: 5px;'
+);

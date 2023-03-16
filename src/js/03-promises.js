@@ -41,7 +41,7 @@ function handleFormSubmit(evt) {
 
 formEl.setAttribute(
   'style',
-  'display: flex; flex-direction: column; gap: 15px;'
+  'display: flex; flex-direction: column; align-items: center; gap: 15px;'
 );
 
 const submitBtnEl = document.querySelector('.form button');

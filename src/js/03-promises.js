@@ -38,14 +38,3 @@ function handleFormSubmit(evt) {
 
   evt.currentTarget.reset();
 }
-
-formEl.setAttribute(
-  'style',
-  'display: flex; flex-direction: column; align-items: center; gap: 20px;'
-);
-
-const submitBtnEl = document.querySelector('.form button');
-submitBtnEl.setAttribute(
-  'style',
-  'margin-left: auto; margin-top: 20px; margin-right: auto; padding: 10px; font-size: 20px;'
-);

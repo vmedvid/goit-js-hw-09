@@ -21,6 +21,22 @@ img {
   font-size: 20px;
 }
 
+.color-switcher-btn-start {
+  margin: 50px;
+  padding: 20px;
+  width: 150px;
+  font-size: 22px;
+  border-radius: 5px;
+}
+
+.color-switcher-btn-stop {
+  margin: 50px;
+  padding: 20px;
+  width: 150px;
+  font-size: 22px;
+  border-radius: 5px;
+}
+
 .timer-button {
   font-size: 20px;
 }
@@ -64,4 +80,23 @@ img {
   font-family: Fredoka One;
   line-height: 1;
   background-color: #ffff00;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.promises-submit-btn {
+  margin-left: auto;
+  margin-top: 20px;
+  margin-right: auto;
+  padding: 10px;
+  font-size: 20px;
 }

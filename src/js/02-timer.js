@@ -9,6 +9,7 @@ const dataDaysEl = document.querySelector('.value[data-days]');
 const dataHoursEl = document.querySelector('.value[data-hours]');
 const dataMinutesEl = document.querySelector('.value[data-minutes]');
 const dataSecondsEl = document.querySelector('.value[data-seconds]');
+const timerEndTextEl = document.querySelector('.timer-end-text');
 startTimerBtn.setAttribute('disabled', true);
 let selectedDate;
 
@@ -17,14 +18,14 @@ const options = {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
-  onClose(selectedDates) {
-    if (selectedDates[0] < options.defaultDate) {
+  onClose([selectedDates]) {
+    if (selectedDates < Date.now()) {
       Notify.failure('Please choose a date in the future');
       startTimerBtn.setAttribute('disabled', true);
     } else {
       startTimerBtn.removeAttribute('disabled');
-      selectedDate = selectedDates[0];
-      console.log('Вибрана дата:', selectedDate);
+      selectedDate = selectedDates;
+      console.log('Вибрана дата:', selectedDates);
     }
   },
 };
@@ -37,21 +38,20 @@ const timer = targetDate => {
   clearInterval(timerId);
 
   timerId = setInterval(() => {
-    let countdownTime = targetDate - new Date();
-    document.querySelector('.timer-end-text')?.remove();
+    let countdownTime = targetDate - Date.now();
+
     if (countdownTime < 0) {
       clearInterval(timerId);
-      const newString = `<p class="timer-end-text animate__animated animate__zoomIn">WE WON!!!</p>`;
-      document
-        .querySelector('.timer')
-        .insertAdjacentHTML('afterend', newString);
+      timerEndTextEl.classList.remove('is-hidden');
       return;
     }
+
     const { days, hours, minutes, seconds } = convertMs(countdownTime);
-    dataDaysEl.innerText = addLeadingZero(days);
-    dataHoursEl.innerText = addLeadingZero(hours);
-    dataMinutesEl.innerText = addLeadingZero(minutes);
-    dataSecondsEl.innerText = addLeadingZero(seconds);
+
+    changeInnerText(dataDaysEl, days);
+    changeInnerText(dataHoursEl, hours);
+    changeInnerText(dataMinutesEl, minutes);
+    changeInnerText(dataSecondsEl, seconds);
   }, 1000);
 };
 
@@ -74,9 +74,9 @@ function convertMs(ms) {
 }
 
 function addLeadingZero(value) {
-  const newValue = value.toString();
-  if (newValue.length > 2) {
-    return newValue;
-  }
-  return newValue.padStart(2, 0);
+  return value.toString().padStart(2, 0);
+}
+
+function changeInnerText(element, newText) {
+  return (element.innerText = addLeadingZero(newText));
 }

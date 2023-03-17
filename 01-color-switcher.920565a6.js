@@ -1,0 +1,2 @@
+!function(){var t=document.querySelector("button[data-start]"),e=document.querySelector("button[data-stop]"),n=null,o=0;function c(t){t.style.backgroundColor="#".concat(Math.floor(16777215*Math.random()).toString(16))}t.addEventListener("click",(function(){o=0,n=setInterval((function(){c(document.body),o+=1}),1e3),t.setAttribute("disabled",!0)})),e.addEventListener("click",(function(){clearInterval(n),t.removeAttribute("disabled"),console.log("Фон змінився ".concat(o," раз(-и,-ів)"))}))}();
+//# sourceMappingURL=01-color-switcher.920565a6.js.map

@@ -1,0 +1,2 @@
+const t=document.querySelector("button[data-start]"),e=document.querySelector("button[data-stop]");let o=null,n=0;function r(t){t.style.backgroundColor=`#${Math.floor(16777215*Math.random()).toString(16)}`}t.addEventListener("click",(()=>{n=0,o=setInterval((()=>{r(document.body),n+=1}),1e3),t.setAttribute("disabled",!0)})),e.addEventListener("click",(()=>{clearInterval(o),t.removeAttribute("disabled"),console.log(`Фон змінився ${n} раз(-и,-ів)`)}));
+//# sourceMappingURL=01-color-switcher.0d863da6.js.map

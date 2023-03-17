@@ -48,10 +48,10 @@ const timer = targetDate => {
 
     const { days, hours, minutes, seconds } = convertMs(countdownTime);
 
-    changeInnerText(dataDaysEl, days);
-    changeInnerText(dataHoursEl, hours);
-    changeInnerText(dataMinutesEl, minutes);
-    changeInnerText(dataSecondsEl, seconds);
+    updateTimerField(dataDaysEl, days);
+    updateTimerField(dataHoursEl, hours);
+    updateTimerField(dataMinutesEl, minutes);
+    updateTimerField(dataSecondsEl, seconds);
   }, 1000);
 };
 
@@ -77,6 +77,6 @@ function addLeadingZero(value) {
   return value.toString().padStart(2, 0);
 }
 
-function changeInnerText(element, newText) {
-  return (element.innerText = addLeadingZero(newText));
+function updateTimerField(field, newValue) {
+  return (field.innerText = addLeadingZero(newValue));
 }
